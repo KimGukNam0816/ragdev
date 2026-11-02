@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragdev-legal-chunking"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["pdfplumber>=0.11,<0.12"]
+
+[project.optional-dependencies]
+test = ["reportlab>=4,<5"]
+
+[project.scripts]
+legal-rag = "legal_rag.pipeline:main"
+
+[tool.setuptools.packages.find]
+include = ["legal_rag*"]
