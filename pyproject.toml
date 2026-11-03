@@ -10,9 +10,24 @@ dependencies = ["pdfplumber>=0.11,<0.12"]
 
 [project.optional-dependencies]
 test = ["reportlab>=4,<5"]
+eval = [
+    "numpy>=1.26,<3",
+]
+rerank = [
+    "sentence-transformers>=5,<6",
+    "torch>=2.7,<3",
+]
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
 
 [project.scripts]
 legal-rag = "legal_rag.pipeline:main"
 
 [tool.setuptools.packages.find]
 include = ["legal_rag*"]
+
+[tool.uv.sources]
+torch = { index = "pytorch" }

@@ -1,5 +1,9 @@
 # 한국 법령 PDF RAG 청킹
 
+BGE cross-encoder rerank 전후 비교가 추가되었습니다. 실행: `uv run --inexact --extra rerank python -m legal_rag.rerank`. 설명은 `evaluation/RERANK.md`, 결과는 `artifacts/rerank/REPORT.md`에서 확인합니다.
+
+검색 평가와 Ollama 임베딩이 추가되었습니다. 실행: `uv run --extra eval python -m legal_rag.evaluate --models qwen3-embedding:0.6b bge-m3`. 평가셋 50문항과 상세 사용법은 `evaluation/README.md`, 결과는 `artifacts/evaluation/REPORT.md`에서 확인합니다.
+
 로컬 `ragdev` 프로젝트는 Codex 등록명이며 실제 경로는 `C:\project\reg_project`입니다. 조사 시 기존 코드는 없고 `data/`에 PDF 6개가 있었습니다. 원본 PDF를 수정하지 않는 별도 패키지입니다. Python 3.10 이상을 사용합니다.
 
 ## 실행
